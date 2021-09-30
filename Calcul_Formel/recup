@@ -1,0 +1,54 @@
+1/
+R100=RealField(100)
+R10=RealField(10)
+print(25/7+1/134)
+print(R10(25/7 + 1/134))
+print(R100(25/7 + 1/134))
+
+x=cos(pi/6)
+SR('I')
+print(x)
+print(x.n(10))
+
+2/
+k=0
+T=[]
+while k <=10:
+    x=(1-I)**k
+    T=T+[x]
+    k+=1
+print(T)
+
+
+
+Tabs = []
+j=0
+for j in range(10):
+    Tabs=Tabs+[abs(T[j])]
+print(Tabs)
+
+j=0
+
+def absfct(x):
+    return sqrt(2)**x
+
+
+for j in range(10):
+    print(absfct(j))
+
+
+
+
+Targ = []
+for j in range(10):
+    Targ=Targ+[arg(T[j])]
+print(Targ)
+
+def argfct(x):
+    return -x*pi/4
+
+for j in range(10):
+    print(argfct(j))
+
+
+
