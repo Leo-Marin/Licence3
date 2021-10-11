@@ -373,10 +373,16 @@ Résultat attendu :
 prompt --- Q17 : Donnez, pour chaque livre (numéro ISBN et titre) emprunté au moins deux fois, son nombre d’exemplaires en catégorie "Exclu". 
 
 
-SELECT l.isbn, titre, code_pret, COUNT(*)
-FROM Livre l JOIN Exemplaire e ON l.isbn=e.isbn
-GROUP BY l.isbn, titre, code_pret
-HAVING COUNT(numero)>=2 AND code_pret='EXCLU';
+SELECT L.isbn, titre, COUNT(DISTINCT numero)
+FROM Livre L, Exemplaire E
+WHERE L.isbn=E.isbn AND code_pret='EXCLU' AND L.isbn IN (SELECT isbn
+                                        FROM Emprunt, Exemplaire E2 
+                                        WHERE num_ex=E2.numero
+                                        GROUP BY isbn
+                                        HAVING COUNT(*)>=2)
+GROUP BY L.isbn, titre;
+
+
 
 
 /*
@@ -393,9 +399,15 @@ prompt -- 2 DUPOND
 
 
 
-/*
-VOTRE REPONSE ICI
-*/
+
+SELECT num_ab, nom
+FROM abonne
+WHERE nom IN (
+    SELECT nom
+    FROM abonne
+    GROUP BY nom
+    HAVING   COUNT(nom) > 1);
+
 
 /*
 Résultat attendu :
@@ -410,9 +422,9 @@ Résultat attendu :
 
 prompt --- Q19 : Existe-t-il des catégories de livres empruntées par tous les abonnés ?
 
-/*
-VOTRE REPONSE ICI
-*/
+SELECT categorie 
+FROM Livre L
+WHERE
 
 
 /*
