@@ -3,4 +3,8 @@ public class Personne{
 	private String prenom;
 
 	
+	public Personne(String n, String p){
+		this.nom = n;
+		this.prenom = p;
+	}
 }
