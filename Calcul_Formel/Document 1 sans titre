@@ -1,0 +1,47 @@
+v.n(b) pour connaître v avec b bits de précision.
+L=[fibonacci(k) for k in range(10)]
+
+
+var('a,b')
+modele(x) = a*x + b
+data=[[x[k],y[k]] for k in range(2,48)]
+aetb = find_fit(data,modele)
+
+On obtient le module avec abs(z).
+On obtient l'argument avec arg(z)
+find_root. Attention, cette fonction ne renvoie qu'une racine approx !
+roots cherche à calculer toutes les racines de manière exacte dans l'anneau symbolique SR
+limit(f(x),x=+infinity)
+solve(x(t)==0,t)
+simplify et simplify_... pour obtenir des expressions aussi simples que possibles
+sintheta1.full_simplify()
+theta1= arccos(costheta1)
+
+plot(f(x),(-0,10)) # fonction + son domaine de def
+Tracer la courbe 𝐶 à l'aide de parametric_plot
+parametric_plot((x(t),y(t)),(t,-2,2))
+implicit_plot prend en entrée une équation et deux couples (xmin,xmax) et (ymin,ymax)
+
+eq1 = (x)**2 + (y)**2 == R1**2
+eq2 = (x-R1)**2 + (y)**2 == R2**2
+
+
+
+Dans SageMath, les structures ℤ et ℚ sont nommées ZZ et QQ. Par exemple QQ(3) construit le rationnel 3 alors que ZZ(3) construit l'entier 3
+ZZ(3)+ZZ(5) et QQ(3)+QQ(5)
+Matrix(n,n)
+A=matrix(m,n,[[ligne1],[ligne2],...,lignem]])
+vector([e1,e2,...,em])
+A.row(i)
+pow(3,n,5) (3^n %5)
+A=Integers(50) définit la structure mathématique correspondant aux entiers modulo 50
+A(57) == 7
+random_element() de I10 : I10.random_element()
+𝐺𝐹(5) corps fini
+transpose()
+
+𝐻=𝐴𝑇𝐴
+𝑐=𝐴𝑇𝑏
+A1.rank()
+ight_kernel()' qui pour une matrice donnée 𝐴∈𝕂𝑚×𝑛
+
